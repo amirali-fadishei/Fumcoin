@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to top, #1CB5E0 0%, #000851 100%);" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ExchangeApp.SignUp">
+   <stylesheets>
+      <URL value="@css/reset.css" />
+   </stylesheets>
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="430.0" BorderPane.alignment="CENTER">
+         <Pane layoutX="584.0" layoutY="100.0" prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: linear-gradient(#e3ffe7 0%, #d9e7ff 100%); -fx-background-radius: 40;">
+            <effect>
+               <DropShadow />
+            </effect>
+            <children>
+               <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="84.0" layoutY="177.0">
+                  <image>
+                     <Image url="@images/icon.png" />
+                  </image>
+               </ImageView>
+               <Text fill="#ffe500" layoutX="41.0" layoutY="307.0" smooth="false" strokeType="OUTSIDE" strokeWidth="2.0" style="-fx-font-size: 40;" styleClass="text-bold" text="Fum Coin" textAlignment="CENTER">
+                  <stroke>
+                     <LinearGradient>
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="1.0" green="0.014814814552664757" blue="0.014814814552664757" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="0.458089679479599" green="0.49473685026168823" blue="0.05497075989842415" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </stroke>
+               </Text>
+            </children>
+         </Pane>
+         <Pane layoutX="66.0" layoutY="100.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: white; -fx-background-radius: 40;">
+            <effect>
+               <DropShadow />
+            </effect>
+            <TextField fx:id="signName" alignment="CENTER_RIGHT" layoutX="263.0" layoutY="150.0" nodeOrientation="LEFT_TO_RIGHT" promptText="نام کاربری" style="-fx-border-style: dashed; -fx-background-color: transparent; -fx-border-width: 0 0 1 0; -fx-font-size: 17;" styleClass="text-light" />
+            <Button layoutX="37.0" layoutY="266.0" mnemonicParsing="false" onAction="#chooseFile" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right bottom, #00d2ff 0%, #3a47d5 100%); -fx-background-radius: 20; -fx-font-size: 15;" styleClass="text-light" text="آپلود عکس" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="175.0" layoutY="391.0" mnemonicParsing="false" onAction="#signUpApp" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right bottom, #00d2ff 0%, #3a47d5 100%); -fx-background-radius: 20; -fx-font-size: 17;" styleClass="text-light" text="ثبت نام" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Text fill="RED" layoutX="225.0" layoutY="466.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.3" style="-fx-font-size: 15;" styleClass="text-light" text="حساب دارید؟">
+               <effect>
+                  <DropShadow />
+               </effect></Text>
+            <TextField fx:id="captchaCodeField" alignment="CENTER_RIGHT" layoutX="269.0" layoutY="333.0" prefHeight="40.0" prefWidth="120.0" promptText="کد کپچا" style="-fx-border-style: dashed; -fx-background-color: transparent; -fx-border-width: 0 0 1 0; -fx-font-size: 17;" styleClass="text-light" />
+            <TextField fx:id="signFirstName" alignment="CENTER_RIGHT" layoutX="261.0" layoutY="97.0" nodeOrientation="LEFT_TO_RIGHT" promptText="نام" style="-fx-border-style: dashed; -fx-background-color: transparent; -fx-border-width: 0 0 1 0; -fx-font-size: 17;" styleClass="text-light" />
+            <TextField fx:id="signLastName" alignment="CENTER_RIGHT" layoutX="37.0" layoutY="97.0" nodeOrientation="LEFT_TO_RIGHT" promptText="نام خانوادگی" style="-fx-border-style: dashed; -fx-background-color: transparent; -fx-border-width: 0 0 1 0; -fx-font-size: 17;" styleClass="text-light" />
+            <TextField fx:id="signEmail" alignment="CENTER_RIGHT" layoutX="215.0" layoutY="261.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="250.0" promptText="ایمیل" style="-fx-border-style: dashed; -fx-background-color: transparent; -fx-border-width: 0 0 1 0; -fx-font-size: 17;" styleClass="text-light" />
+            <TextField fx:id="signPhone" alignment="CENTER_RIGHT" layoutX="37.0" layoutY="150.0" nodeOrientation="LEFT_TO_RIGHT" promptText="شماره تلفن" style="-fx-border-style: dashed; -fx-background-color: transparent; -fx-border-width: 0 0 1 0; -fx-font-size: 17;" styleClass="text-light" />
+            <PasswordField fx:id="signPassword" alignment="CENTER_RIGHT" layoutX="263.0" layoutY="205.0" nodeOrientation="LEFT_TO_RIGHT" promptText="رمز عبور" style="-fx-border-style: dashed; -fx-background-color: transparent; -fx-border-width: 0 0 1 0; -fx-font-size: 17;" styleClass="text-light" />
+            <ImageView fx:id="captchaImageView" fitHeight="40.0" fitWidth="100.0" layoutX="134.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" />
+            <PasswordField fx:id="signRepeatPassword" alignment="CENTER_RIGHT" layoutX="35.0" layoutY="205.0" nodeOrientation="LEFT_TO_RIGHT" promptText="تکرار رمز عبور" style="-fx-border-style: dashed; -fx-background-color: transparent; -fx-border-width: 0 0 1 0; -fx-font-size: 17;" styleClass="text-light" />
+            <Text fill="RED" layoutX="194.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="2.0" style="-fx-font-size: 35;" styleClass="text-bold" text="ثبت نام" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Text>
+            <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" layoutX="242.0" layoutY="343.0" onMouseClicked="#generateCaptcha" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <Image url="@images/retry.png" />
+            </ImageView>
+            <Text fill="#24006b" layoutX="193.0" layoutY="464.0" onMouseClicked="#navigateToLoginPage" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-light" text="ورود" textAlignment="RIGHT" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+         </Pane>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,15 @@
+@font-face {
+    src: url('../font/IRANYekanX-Bold.ttf');
+}
+
+@font-face {
+    src: url("../font/IRANYekanX-Regular.ttf");
+}
+
+.text-bold {
+    -fx-font-family: "IRANYekanX Bold";
+}
+
+.text-light {
+    -fx-font-family: "IRANYekanX";
+}

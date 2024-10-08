@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to top, #1CB5E0 0%, #000851 100%);" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ExchangeApp.Swap">
+   <stylesheets>
+      <URL value="@css/reset.css" />
+   </stylesheets>
+   <top>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <Text fx:id="clock" fill="WHITE" layoutX="770.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="text-light" text="ساعت" />
+         <Button fx:id="userShowButton" alignment="CENTER" mnemonicParsing="false" onAction="#openProfileScreen" style="-fx-background-color: white; -fx-background-radius: 0 0 30 0;" text="نام کاربری" textAlignment="CENTER" textFill="#001069">
+            <font>
+               <Font size="20.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Pane layoutX="300.0" prefHeight="40.0" prefWidth="300.0" style="-fx-background-radius: 0 0 15 15; -fx-background-color: linear-gradient(to top, #00d2ff 0%, #3a47d5 100%);">
+            <effect>
+               <DropShadow />
+            </effect>
+            <Label layoutX="127.0" layoutY="5.0" styleClass="text-bold" text="تبادل" textFill="#001069">
+               <font>
+                  <Font name="Roboto Bold" size="20.0" />
+               </font>
+            </Label>
+         </Pane>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <Pane layoutX="75.0" layoutY="79.0" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: white; -fx-background-radius: 40;">
+            <Pane layoutY="220.0" prefHeight="280.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(#e3ffe7 0%, #d9e7ff 100%); -fx-background-radius: 40;">
+               <TextField fx:id="secondinput" alignment="CENTER_RIGHT" editable="false" layoutX="373.0" layoutY="66.0" promptText="0" style="-fx-background-color: transparent; -fx-border-width: 1; -fx-border-style: solid; -fx-border-radius: 20; -fx-padding: 10 20; -fx-font-size: 15;" styleClass="text-light" />
+               <ComboBox fx:id="secondToken" layoutX="110.0" layoutY="69.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="150.0" promptText="ارز مقصد" style="-fx-background-color: transparent; -fx-border-color: blue; -fx-border-radius: 20; -fx-border-style: dotted; -fx-border-width: 2;" styleClass="text-light" />
+            </Pane>
+            <ComboBox fx:id="firstToken" layoutX="110.0" layoutY="106.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="150.0" promptText="ارز مبدا" style="-fx-background-color: transparent; -fx-border-color: blue; -fx-border-radius: 20; -fx-border-style: dotted; -fx-border-width: 2;" styleClass="text-light" />
+            <TextField fx:id="firstinput" alignment="CENTER_RIGHT" layoutX="375.0" layoutY="103.0" promptText="حجم ارز" style="-fx-background-color: transparent; -fx-border-width: 1; -fx-border-style: solid; -fx-border-radius: 20; -fx-padding: 10 20; -fx-font-size: 15;" styleClass="text-light" />
+            <Button graphicTextGap="0.0" layoutX="245.0" layoutY="429.0" mnemonicParsing="false" onAction="#convert" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right bottom, #00d2ff 0%, #3a47d5 100%); -fx-background-radius: 20; -fx-font-size: 17;" styleClass="text-light" text="تبدیل" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Text fill="RED" layoutX="168.0" layoutY="405.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" styleClass="text-bold" text="* کارمزد عملیات 10 دلار می باشد!" textAlignment="CENTER" wrappingWidth="313.38111877441406">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Circle fill="WHITE" layoutX="320.0" layoutY="220.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="300.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@images/exchange.png" />
+            </ImageView>
+            <effect>
+               <DropShadow />
+            </effect>
+         </Pane>
+      </AnchorPane>
+   </center>
+   <right>
+      <GridPane alignment="CENTER" maxHeight="500.0" maxWidth="100.0" nodeOrientation="RIGHT_TO_LEFT" style="-fx-background-color: linear-gradient(to top, #00d2ff 0%, #3a47d5 100%); -fx-background-radius: 0 30 30 0;" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.60003662109375" minWidth="10.0" percentWidth="100" prefWidth="101.60003662109375" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+         <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#openMainPageScreen" style="-fx-background-color: transparent;" textAlignment="CENTER" textFill="#ffe500" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <graphic>
+               <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@images/house.png" />
+               </ImageView>
+            </graphic>
+            <font>
+               <Font size="20.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#openExchangeScreen" style="-fx-background-color: transparent;" textAlignment="CENTER" textFill="#ffe500" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <graphic>
+               <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@images/dollar.png" />
+               </ImageView>
+            </graphic>
+            <font>
+               <Font size="20.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#openSwapScreen" style="-fx-background-color: transparent;" textAlignment="CENTER" textFill="#ffe500" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <graphic>
+               <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@images/swap.png" />
+               </ImageView>
+            </graphic>
+            <font>
+               <Font size="20.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#openTransferScreen" style="-fx-background-color: transparent;" textAlignment="CENTER" textFill="#ffe500" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <graphic>
+               <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@images/transfer.png" />
+               </ImageView>
+            </graphic>
+            <font>
+               <Font size="20.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: transparent;" textAlignment="CENTER" textFill="#ffe500" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <graphic>
+               <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@images/exit.png" />
+               </ImageView>
+            </graphic>
+            <font>
+               <Font size="20.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#openAboutUsScreen" style="-fx-background-color: transparent;" textAlignment="CENTER" textFill="#ffe500" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <graphic>
+               <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@images/users.png" />
+               </ImageView>
+            </graphic>
+            <font>
+               <Font size="20.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+      </GridPane>
+   </right>
+</BorderPane>
